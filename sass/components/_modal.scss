@@ -54,17 +54,13 @@
     outline: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+        &:hover,
+        &:focus {
+            border-color: var(--accent-color);
+        }
 }
 
-.modal-input:hover,
-.modal-input:focus {
-    border-color: var(--accent-color);
-}
 
-.modal-input:focus+.input-icon,
-.modal-input:hover+.input-icon {
-    fill: var(--accent-color);
-}
 
 .modal-label {
     display: block;
@@ -78,13 +74,6 @@
     margin-bottom: 10px;
 }
 
-.modal-text::placeholder {
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
-}
-
 .modal-text {
     width: 100%;
     height: 120px;
@@ -94,11 +83,16 @@
     resize: none;
     outline: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-text:hover,
-.modal-text:focus {
-    border-color: var(--accent-color);
+        &:hover,
+        &:focus {
+            border-color: var(--accent-color);
+        }
+        &::placeholder {
+            font-size: 12px;
+            line-height: 1.16;
+            letter-spacing: 0.01em;
+            color: rgba(117, 117, 117, 0.5);
+            }
 }
 
 .modal-checkbox {
@@ -136,6 +130,10 @@
     left: 12px;
     transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        .modal-input:focus+&,
+        .modal-input:hover+& {
+            fill: var(--accent-color);
+        }
 }
 
 .check-text {
@@ -145,14 +143,13 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}
-
-.check-text::before {
-    content: '';
-    width: 16px;
-    height: 15px;
-    border: 2px solid #212121;
-    border-radius: 3px;
+        &::before {
+            content: '';
+            width: 16px;
+            height: 15px;
+            border: 2px solid #212121;
+            border-radius: 3px;
+        }
 }
 
 .input-check:checked+.check-text::before {

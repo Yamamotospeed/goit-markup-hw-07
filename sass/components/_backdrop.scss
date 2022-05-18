@@ -8,7 +8,7 @@
     justify-content: center;
     background: rgba(0, 0, 0, 0.2);
     transition: opacity 250ms, visibility 250ms;
-    &.is-hidden .modal {
+        &.is-hidden .modal {
             transform: scale(0.5) translateY(600px);
         }
 }
